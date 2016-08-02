@@ -1,9 +1,9 @@
 /**************/
 /*** CONFIG ***/
 /**************/
-var PORT = 8080;
+var PORT = 8380;
 
-
+var bodyParser = require('body-parser')
 /*************/
 /*** SETUP ***/
 /*************/
@@ -17,11 +17,11 @@ io.set('log level', 1);
 server.listen(PORT, null, function() {
     console.log("Listening on port " + PORT);
 });
-main.use(express.bodyParser());
+main.use(bodyParser());
 
-main.get('/', function(req, res){ res.sendfile('newclient.html'); });
-main.get('/index.html', function(req, res){ res.sendfile('newclient.html'); });
-main.get('/client.html', function(req, res){ res.sendfile('newclient.html'); });
+main.get('/', function(req, res){ res.sendfile('client.html'); });
+main.get('/index.html', function(req, res){ res.sendfile('client.html'); });
+main.get('/client.html', function(req, res){ res.sendfile('client.html'); });
 
 
 
